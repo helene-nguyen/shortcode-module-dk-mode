@@ -5,7 +5,7 @@ const app = {
     //~INITIALIZATION
     init() {
         console.log('Everything is working');
-        
+
         app.handleButtonClick();
     },
     //~METHODS
@@ -17,22 +17,44 @@ const app = {
         event.preventDefault();
 
         app.body.classList.toggle('dark-mode');
-        
+
         const formElement = document.getElementById('form');
         formElement.setAttribute('data-form-info', `${app.buttonClickCount++}`);
         //Controle
-        app.displayInputText(app.buttonClickCount);
+        app.displayInputText();
+        app.displayInputCount(app.buttonClickCount);
 
     },
-    displayInputColor() {
-    },
-    displayInputText(count) {
+  
+    displayInputText() {
         //add as value data-form-info
-        const inputText = document.querySelector('.text');
-        inputText.setAttribute('type', 'text');
-        inputText.setAttribute('placeholder', `${count}`)
-        
-    }
+        const bodyElement = app.body.classList.contains('dark-mode');
+        const inputsText = document.querySelectorAll('.text');
+
+        if (bodyElement) {
+            for (const inputText of inputsText) {
+                inputText.setAttribute('type', 'text');
+            }
+        } else {
+            for (const inputText of inputsText) {
+                inputText.setAttribute('type', 'hidden');
+            }
+        }
+    },
+    displayInputCount(count) {
+
+        const inputCounterElement = document.querySelector('.counter');
+        const bodyElement = app.body.classList.contains('dark-mode');
+
+        if (bodyElement) {
+            inputCounterElement.setAttribute('type', 'text');
+        } else {
+            inputCounterElement.setAttribute('type', 'hidden');
+        }
+ 
+        inputCounterElement.setAttribute('placeholder', `${count}`);
+    },
+    displayInputColor() { },
 
 
 };

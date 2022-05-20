@@ -61,6 +61,8 @@ h1 {
 #form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 input {
@@ -70,6 +72,8 @@ input {
 button {
     font-family: var(--font-comfortaa);
     padding: 0.75em 1em;
+    margin-bottom: 3em;
+    width: 8em;
 }
 
 footer {
