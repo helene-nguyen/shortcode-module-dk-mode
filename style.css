@@ -58,11 +58,30 @@ h1 {
     user-select: none;
 }
 
-.signature {
-    font-size: 0.75em;
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 1em 0;
+}
+
+button {
+    font-family: var(--font-comfortaa);
+    padding: 0.75em 1em;
 }
 
 footer {
     position: absolute;
     bottom: 1em;
+}
+
+.signature {
+    font-size: 0.75em;
+}
+
+.dark-mode {
+    color: #FFF;
+    background-color: #262626;
 }
